@@ -1,19 +1,17 @@
 @import "../abstracts/index.less";
 
-// @font-face {
-//   font-family: "Inter";
-//   font-weight: 400 600;
-//   src: url("/assets/fonts/Inter-VariableFont_slnt,wght.ttf");
-// }
-
-// :where(body) {
-// font: 400 1rem/150% "Inter", sans-serif;
-// color: @clr-electric-blue;
-// }
-
-.bold {
-  font-weight: 600;
+@font-face {
+  font-family: "Space Grotesk";
+  font-weight: 500 700;
+  src: url("/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf");
 }
 
-// :where(h1, h2, h3, h4, h5, h6) {
-// }
+:where(body) {
+  font: 500 1.125rem/1.75rem "Space Grotesk", sans-serif;
+  color: @clr-grey-light;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  .bold;
+  color: @clr-white;
+}

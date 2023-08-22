@@ -1,0 +1,44 @@
+[
+  {
+    "title": "design portfolio",
+    "image": "1",
+    "techStack": ["html", "css"],
+    "projectLink": "#",
+    "codeLink": "#"
+  },
+  {
+    "title": "e-learning landing page",
+    "image": "2",
+    "techStack": ["html", "css"],
+    "projectLink": "#",
+    "codeLink": "#"
+  },
+  {
+    "title": "todo web app",
+    "image": "3",
+    "techStack": ["html", "css", "javascript"],
+    "projectLink": "#",
+    "codeLink": "#"
+  },
+  {
+    "title": "entertainment web app",
+    "image": "4",
+    "techStack": ["html", "css", "javascript"],
+    "projectLink": "#",
+    "codeLink": "#"
+  },
+  {
+    "title": "memory game",
+    "image": "5",
+    "techStack": ["html", "css", "javascript"],
+    "projectLink": "#",
+    "codeLink": "#"
+  },
+  {
+    "title": "art gallery showcase",
+    "image": "6",
+    "techStack": ["html", "css", "javascript"],
+    "projectLink": "#",
+    "codeLink": "#"
+  }
+]
