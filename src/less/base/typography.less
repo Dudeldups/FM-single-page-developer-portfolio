@@ -1,154 +1,19 @@
 @import "../abstracts/index.less";
 
-@font-face {
-  font-family: "Inter";
-  font-weight: 400 600;
-  src: url("/assets/fonts/Inter-VariableFont_slnt,wght.ttf");
-}
+// @font-face {
+//   font-family: "Inter";
+//   font-weight: 400 600;
+//   src: url("/assets/fonts/Inter-VariableFont_slnt,wght.ttf");
+// }
 
-:where(body) {
-  font: 400 1rem/150% "Inter", sans-serif;
-  color: @clr-electric-blue;
-}
+// :where(body) {
+// font: 400 1rem/150% "Inter", sans-serif;
+// color: @clr-electric-blue;
+// }
 
 .bold {
   font-weight: 600;
 }
 
-:where(h1, h2, h3, h4, h5, h6) {
-  line-height: 110%;
-  .bold();
-  color: @clr-gunmetal;
-}
-
-.main-header {
-  text-align: center;
-
-  .mq(@bp-desktop, {
-    text-align: left;
-  });
-
-  &__title {
-    font-size: 3rem;
-    letter-spacing: -0.15rem;
-
-    .mq(1200px, {
-      font-size: 4rem;
-      letter-spacing: -0.2rem;
-    });
-  }
-}
-
-.calculator {
-  &__title {
-    font-size: 1.5rem;
-    letter-spacing: -0.075rem;
-  }
-}
-
-.radio__label {
-  font-weight: 600;
-  line-height: 150%;
-  color: @clr-gunmetal;
-}
-
-.number-input {
-  &__label {
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 150%;
-    color: @clr-electric-blue;
-  }
-
-  &__input {
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: -0.075rem;
-
-    &::placeholder {
-      color: @clr-gunmetal;
-      opacity: 0.35;
-    }
-  }
-
-  &__unit {
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: -0.075rem;
-    color: @clr-blue;
-  }
-}
-
-.result {
-  color: white;
-
-  &__title,
-  &__welcome-title {
-    color: white;
-  }
-
-  &__welcome-title {
-    font-size: 1.5rem;
-    letter-spacing: -0.075rem;
-  }
-
-  &__number {
-    font-size: 3rem;
-    font-weight: 600;
-    line-height: 110%;
-    letter-spacing: -0.15rem;
-
-    .mq(@bp-desktop, {
-      font-size: 4rem;
-      letter-spacing: -0.2rem;
-    });
-  }
-
-  &__desc {
-    font-size: 0.875rem;
-  }
-}
-
-.explanation {
-  &__title {
-    font-size: 2rem;
-    letter-spacing: -0.1rem;
-
-    .mq(@bp-desktop, {
-      font-size: 3rem;
-      letter-spacing: -0.15rem;
-    });
-  }
-}
-
-.suggestions {
-  &__title {
-    font-size: 1.5rem;
-    letter-spacing: -0.075rem;
-  }
-}
-
-.limitations {
-  text-align: center;
-
-  .mq(@bp-desktop, {
-    text-align: left;
-  });
-
-  &__title {
-    font-size: 2rem;
-    letter-spacing: -0.1rem;
-
-    .mq(@bp-desktop, {
-      font-size: 3rem;
-      letter-spacing: -0.15rem;
-    });
-  }
-}
-
-.grid {
-  &__title {
-    font-size: 1.25rem;
-    letter-spacing: -0.0625rem;
-  }
-}
+// :where(h1, h2, h3, h4, h5, h6) {
+// }
