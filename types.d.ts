@@ -5,3 +5,5 @@ type ProjectsData = {
   projectLink: string;
   codeLink: string;
 };
+
+type ContactProps = {};

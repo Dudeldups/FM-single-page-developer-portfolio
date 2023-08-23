@@ -21,7 +21,9 @@ export default function Projects() {
     <section className="projects">
       <header className="projects__header">
         <h2 className="projects__title">Projects</h2>
-        <button className="contact-button">Contact me</button>
+        <a href="#contact" className="contact-link">
+          Contact me
+        </a>
       </header>
       <ul className="projects__list">{allProjects}</ul>
     </section>

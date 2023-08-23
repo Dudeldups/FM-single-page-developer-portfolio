@@ -15,3 +15,47 @@
   .bold;
   color: @clr-white;
 }
+
+.contact-link {
+  font-size: 1rem;
+  line-height: 1.625rem;
+  font-weight: 700;
+  letter-spacing: 0.1429rem;
+  text-transform: uppercase;
+}
+
+.nav {
+  &__name {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02rem;
+    color: @clr-white;
+  }
+}
+
+.introduction {
+  text-align: center;
+
+  .mq(@bp-tablet, {
+    text-align: left;
+  });
+
+  &__title {
+    font-size: .get-clamp(2.5rem, 5.5rem, 25rem, .convert(@bp-desktop) []) [];
+    line-height: 100%;
+    letter-spacing: .get-clamp(
+        -0.071rem,
+        -0.156rem,
+        25rem,
+        .convert(@bp-desktop) []
+      )
+      [];
+  }
+
+  &__desc {
+    font-size: .get-clamp(1rem, 1.125rem, 25rem, .convert(@bp-desktop) []) [];
+    line-height: .get-clamp(1.625rem, 1.75rem, 25rem, .convert(@bp-desktop) [])
+      [];
+  }
+}
