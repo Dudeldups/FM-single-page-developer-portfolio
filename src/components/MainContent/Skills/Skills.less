@@ -1,8 +1,24 @@
 @import "../../../less/abstracts/index.less";
 
 .skills {
+  position: relative;
   .max-width-content;
   .padding-inline;
+
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: url("/assets/images/pattern-rings.svg") no-repeat;
+    background-position: bottom right -22rem;
+    transform: translate(0, 5rem);
+
+    .mq(@bp-tablet, {
+      background-position: bottom right;
+      transform: translate(24rem, 1rem);
+    });
+  }
 
   &__exp {
     .mq(@bp-tablet, {

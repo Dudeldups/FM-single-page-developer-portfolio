@@ -4,20 +4,33 @@
   .max-width-content;
   .padding-inline;
   position: relative;
-  background: url("/assets/images/pattern-rings.svg") no-repeat,
-    url("/assets/images/pattern-circle.svg") no-repeat;
-  background-position: left -20rem top 8rem, center right -4rem;
+  background: url("/assets/images/pattern-circle.svg") no-repeat;
+  background-position: center right -4rem;
 
   .mq(@bp-tablet, {
-    background-image: url("/assets/images/pattern-rings.svg"), url("/assets/images/pattern-circle.svg"), url("/assets/images/image-profile-tablet.webp");
-    background-position: left -15rem top 5rem, bottom right -4rem, bottom right;
-    background-size: auto, auto, contain;
+    background-image: url("/assets/images/pattern-circle.svg"), url("/assets/images/image-profile-tablet.webp");
+    background-position: bottom right -4rem, bottom right;
+    background-size: auto, contain;
   });
 
   .mq(1075px, {
-    background-image: url("/assets/images/pattern-rings.svg"), url("/assets/images/pattern-circle.svg"), url("/assets/images/image-profile-desktop.webp");
-    background-position: left -15rem top 5rem, bottom 3.25rem right 21rem, bottom right;
+    background-image: url("/assets/images/pattern-circle.svg"), url("/assets/images/image-profile-desktop.webp");
+    background-position: bottom 3.25rem right 21rem, bottom right;
   });
+
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: url("/assets/images/pattern-rings.svg") no-repeat;
+    background-position: -20rem 8rem;
+
+    .mq(@bp-tablet, {
+      background-position: top 7rem left;
+      transform: translate(-14rem, 0);
+    });
+  }
 
   & .nav {
     padding-top: 1.25rem;
@@ -26,6 +39,10 @@
       position: absolute;
       z-index: 1;
       inset: auto 0;
+    });
+
+    .mq(@bp-desktop, {
+      padding-top: 2.44rem;
     });
   }
 }
