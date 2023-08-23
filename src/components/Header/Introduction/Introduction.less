@@ -5,12 +5,8 @@
   position: relative;
   margin-bottom: 5rem;
 
-  .mq(@bp-tablet, {
-    margin-bottom: 3.75rem;    
-  });
-
   .mq(1075px, {
-    margin-bottom: 6.5rem;
+    margin-bottom: 7.25rem;
   });
 
   &__img {
@@ -36,6 +32,10 @@
       margin-top: 5.6rem;
     });
 
+    .mq(@bp-desktop, {
+      margin-top: 7.7rem;
+    });
+
     & span {
       .mq(@bp-tablet 1075px, {
         display: block;
@@ -58,7 +58,7 @@
     margin-block: 1.5rem;
 
     .mq(@bp-tablet, {
-      margin-block: 3.75rem 2rem;
+      margin-block: 2.5rem 4rem;
       max-width: 35ch;
     });
   }
