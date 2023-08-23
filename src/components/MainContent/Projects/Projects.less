@@ -1,1 +1,26 @@
 @import "../../../less/abstracts/index.less";
+
+.projects {
+  .padding-inline;
+  margin-top: 5rem;
+
+  .mq(@bp-tablet, {
+    margin-top: 3rem;
+  });
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__list {
+    margin-top: 2.5rem;
+    display: grid;
+    gap: 2.5rem;
+
+    .mq(@bp-tablet, {
+      grid-template-columns: repeat(2, 1fr);
+    });
+  }
+}

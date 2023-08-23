@@ -13,13 +13,9 @@ export default function Skills() {
   });
 
   return (
-    <>
-      <hr />
-      <section className="skills">
-        <h2 className="sr-only">My skills</h2>
-        <ul className="skills__list">{allSkills}</ul>
-      </section>
-      <hr />
-    </>
+    <section className="skills">
+      <h2 className="sr-only">My skills</h2>
+      <ul className="skills__list">{allSkills}</ul>
+    </section>
   );
 }

@@ -4,8 +4,12 @@
   position: relative;
 
   & .nav {
-    position: absolute;
-    width: 100%;
+    .padding-inline;
     padding-top: 1.25rem;
+
+    .mq(0 @bp-tablet, {
+      position: absolute;
+      width: 100%;
+    });
   }
 }

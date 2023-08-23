@@ -1,8 +1,7 @@
 @import "../../../less/abstracts/index.less";
 
 .nav {
-  .padding-inline;
-
+  .max-width-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,6 +12,10 @@
     flex-direction: row;
     justify-content: space-between;
   });
+
+  &__link {
+    text-decoration: none;
+  }
 
   &__list {
     display: flex;

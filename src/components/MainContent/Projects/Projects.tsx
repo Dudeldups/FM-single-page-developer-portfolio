@@ -21,7 +21,7 @@ export default function Projects() {
     <section className="projects">
       <header className="projects__header">
         <h2 className="projects__title">Projects</h2>
-        <a href="#contact" className="contact-link">
+        <a href="#contact" className="link-underlined">
           Contact me
         </a>
       </header>

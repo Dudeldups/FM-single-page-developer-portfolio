@@ -7,7 +7,7 @@
 }
 
 :where(body) {
-  font: 500 1.125rem/1.75rem "Space Grotesk", sans-serif;
+  font: 500 1rem/1.625rem "Space Grotesk", sans-serif;
   color: @clr-grey-light;
 }
 
@@ -16,12 +16,19 @@
   color: @clr-white;
 }
 
-.contact-link {
-  font-size: 1rem;
-  line-height: 1.625rem;
+.link-underlined,
+.form__button {
+  text-decoration: none;
   font-weight: 700;
   letter-spacing: 0.1429rem;
   text-transform: uppercase;
+  color: @clr-grey-light;
+  transition: color 250ms ease-in;
+
+  &:hover,
+  &:focus-visible {
+    color: @clr-green;
+  }
 }
 
 .nav {
@@ -35,10 +42,8 @@
 }
 
 .introduction {
-  text-align: center;
-
-  .mq(@bp-tablet, {
-    text-align: left;
+  .mq(0 @bp-tablet, {
+    text-align: center;
   });
 
   &__title {
@@ -54,8 +59,78 @@
   }
 
   &__desc {
-    font-size: .get-clamp(1rem, 1.125rem, 25rem, .convert(@bp-desktop) []) [];
-    line-height: .get-clamp(1.625rem, 1.75rem, 25rem, .convert(@bp-desktop) [])
+    .description;
+  }
+}
+
+.skills {
+  .mq(0 @bp-tablet, {
+    text-align: center;
+  });
+
+  &__title {
+    font-size: .get-clamp(2rem, 3rem, 25rem, .convert(@bp-desktop) []) [];
+    line-height: .get-clamp(2.5rem, 3.5rem, 25rem, .convert(@bp-desktop) []) [];
+    letter-spacing: .get-clamp(
+        -0.0625rem,
+        -0.09375rem,
+        25rem,
+        .convert(@bp-desktop) []
+      )
       [];
+  }
+
+  &__exp {
+    .description;
+  }
+}
+
+.projects {
+  &__title {
+    .heading-large;
+  }
+}
+
+.project {
+  &__title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+  }
+}
+
+.techstack {
+  &__item {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    text-transform: uppercase;
+  }
+}
+
+.contact {
+  .mq(0 @bp-desktop, {
+    text-align: center;
+  });
+
+  &__title {
+    .heading-large;
+  }
+
+  &__desc {
+    .description;
+  }
+}
+
+.form {
+  &__input,
+  &__message {
+    color: @clr-white;
+
+    &::placeholder {
+      letter-spacing: -0.0139rem;
+      text-transform: uppercase;
+      color: @clr-white;
+      opacity: 0.55;
+    }
   }
 }

@@ -59,6 +59,23 @@
   font-weight: 700;
 }
 
+.heading-large() {
+  font-size: .get-clamp(2.5rem, 5.5rem, 25rem, .convert(@bp-desktop) []) [];
+  line-height: 100%;
+  letter-spacing: .get-clamp(
+      -0.071rem,
+      -0.15625rem,
+      25rem,
+      .convert(@bp-desktop) []
+    )
+    [];
+}
+
+.description() {
+  font-size: .get-clamp(1rem, 1.125rem, 25rem, .convert(@bp-desktop) []) [];
+  line-height: .get-clamp(1.625rem, 1.75rem, 25rem, .convert(@bp-desktop) []) [];
+}
+
 // padding + margin //
 
 .padding-inline() {
@@ -67,7 +84,7 @@
 
 // misc //
 
-// .max-width() {
-//   max-width: 78rem;
-//   margin-inline: auto;
-// }
+.max-width-content() {
+  max-width: 78rem;
+  margin-inline: auto;
+}

@@ -1,1 +1,30 @@
 @import "../../../less/abstracts/index.less";
+
+.skills {
+  .padding-inline;
+
+  &__exp {
+    .mq(@bp-tablet, {
+      margin-top: 0.88rem;
+    });
+  }
+
+  &__list {
+    display: grid;
+    gap: 1.5rem 2rem;
+    border-top: 0.0625rem solid @clr-white;
+    border-bottom: 0.0625rem solid @clr-white;
+    padding-block: 2.5rem;
+
+    .mq(@bp-tablet, {
+      gap: 3.62rem;
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+      padding-block: 3.25rem;
+      border-bottom: none;
+    });
+
+    .mq(@bp-desktop, {
+      padding-block: 4.5rem 3.4rem;
+    });
+  }
+}
