@@ -19,6 +19,7 @@
 
   &__list {
     display: flex;
+    align-items: center;
     gap: 1.25rem;
   }
 
@@ -26,5 +27,16 @@
     .mq(0 @bp-tablet, {
       transform: scale(0.8);
     });
+
+    & path {
+      transition: fill 250ms ease-in;
+    }
+
+    &:hover,
+    &:focus-visible {
+      & path {
+        fill: @clr-green;
+      }
+    }
   }
 }

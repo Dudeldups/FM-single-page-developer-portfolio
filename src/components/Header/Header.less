@@ -1,15 +1,27 @@
 @import "../../less/abstracts/index.less";
 
 .header {
+  .max-width-content;
+  .padding-inline;
   position: relative;
 
+  .mq(@bp-tablet, {
+    background: url("/assets/images/image-profile-tablet.webp") no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+  });
+
+  .mq(@bp-tablet, {
+    background-image: url("/assets/images/image-profile-desktop.webp");
+  });
+
   & .nav {
-    .padding-inline;
     padding-top: 1.25rem;
 
     .mq(0 @bp-tablet, {
       position: absolute;
-      width: 100%;
+      z-index: 1;
+      inset: auto 0;
     });
   }
 }

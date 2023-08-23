@@ -2,16 +2,15 @@
 
 .introduction {
   .max-width-content;
-  .padding-inline;
   position: relative;
   margin-bottom: 5rem;
 
   .mq(@bp-tablet, {
-    margin-bottom: 3.75rem;
+    margin-bottom: 3.75rem;    
   });
 
   .mq(@bp-desktop, {
-    margin-bottom: 4rem;
+    margin-bottom: 6.5rem;
   });
 
   // &::before {
@@ -35,9 +34,25 @@
     });
   }
 
+  &__text {
+    .mq(@bp-desktop, {
+    padding-bottom: 7rem;
+  });
+  }
+
   &__title {
     max-width: 14ch;
     margin-top: 2.5rem;
+
+    .mq(@bp-tablet, {
+      margin-top: 5.6rem;
+    });
+
+    & span {
+      .mq(@bp-tablet 1075px, {
+        display: block;
+      });
+    }
 
     & .underline {
       display: inline-block;
@@ -55,8 +70,8 @@
     margin-block: 1.5rem;
 
     .mq(@bp-tablet, {
-      margin-block: 3.75rem 2.2rem;
-      max-width: 40ch;
+      margin-block: 3.75rem 2rem;
+      max-width: 35ch;
     });
   }
 }
