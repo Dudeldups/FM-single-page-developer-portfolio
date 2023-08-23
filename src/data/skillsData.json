@@ -1,0 +1,26 @@
+[
+  {
+    "name": "HTML",
+    "time": "4"
+  },
+  {
+    "name": "CSS",
+    "time": "4"
+  },
+  {
+    "name": "Javascript",
+    "time": "4"
+  },
+  {
+    "name": "Accessibility",
+    "time": "4"
+  },
+  {
+    "name": "React",
+    "time": "3"
+  },
+  {
+    "name": "Sass",
+    "time": "3"
+  }
+]
