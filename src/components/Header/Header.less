@@ -4,15 +4,19 @@
   .max-width-content;
   .padding-inline;
   position: relative;
+  background: url("/assets/images/pattern-rings.svg") no-repeat,
+    url("/assets/images/pattern-circle.svg") no-repeat;
+  background-position: left -20rem top 8rem, center right -4rem;
 
   .mq(@bp-tablet, {
-    background: url("/assets/images/image-profile-tablet.webp") no-repeat;
-    background-position: bottom right;
-    background-size: contain;
+    background-image: url("/assets/images/pattern-rings.svg"), url("/assets/images/pattern-circle.svg"), url("/assets/images/image-profile-tablet.webp");
+    background-position: left -15rem top 5rem, bottom right -4rem, bottom right;
+    background-size: auto, auto, contain;
   });
 
-  .mq(@bp-tablet, {
-    background-image: url("/assets/images/image-profile-desktop.webp");
+  .mq(1075px, {
+    background-image: url("/assets/images/pattern-rings.svg"), url("/assets/images/pattern-circle.svg"), url("/assets/images/image-profile-desktop.webp");
+    background-position: left -15rem top 5rem, bottom 3.25rem right 21rem, bottom right;
   });
 
   & .nav {
