@@ -28,7 +28,20 @@
     max-width: 14ch;
     margin-top: 2.5rem;
 
+    .keyframes(slideInH1, {
+      0% { transform: translateY(30rem) }
+      100% { transform: translateY(0) }
+    });
+
+    animation: 10s slideInH1 cubic-bezier(0, 1.2, 0, 1);
+
     .mq(@bp-tablet, {
+      .keyframes(slideInH1, {
+        0% { transform: translateX(-30rem) }
+        100% { transform: translateX(0) }
+      });
+
+      animation: 10s slideInH1 cubic-bezier(0, 1, 0, 1);
       margin-top: 5.6rem;
     });
 
