@@ -2,19 +2,21 @@ import "./FormInput.less";
 
 export default function FormInput({
   handleChange,
+  handleBlur,
   id,
   formInputs,
 }: FormInputProps) {
   const isTextArea = id === "message";
   const currentValue = formInputs[id as keyof FormInputs].value;
   const currentError = formInputs[id as keyof FormInputs].error;
-  const isError = currentError !== "";
-  const isValid = currentValue !== "" && !isError;
+  const isError = currentError.length > 5; // more characters than "valid" :P
 
   return (
     <label
       htmlFor={id}
-      className={`form__label ${isValid ? "valid" : isError ? "error" : ""}`}>
+      className={`form__label ${
+        currentError === "valid" ? "valid" : isError ? "error" : ""
+      }`}>
       <span className="sr-only">{id}</span>
       {isTextArea ? (
         <textarea
@@ -23,6 +25,7 @@ export default function FormInput({
           name={id}
           id={id}
           onChange={handleChange}
+          onBlur={handleBlur}
           value={currentValue}
           className="form__input"></textarea>
       ) : (
@@ -32,6 +35,7 @@ export default function FormInput({
           name={id}
           id={id}
           onChange={handleChange}
+          onBlur={handleBlur}
           value={currentValue}
           className="form__input"
         />

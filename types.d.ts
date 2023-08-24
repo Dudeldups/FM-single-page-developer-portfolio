@@ -17,8 +17,11 @@ type FormInputs = {
   message: Input;
 };
 
+type InputEventHandler = (e: React.ChangeEvent<EventTarget>) => void;
+
 type FormInputProps = {
-  handleChange: (e: React.ChangeEvent<EventTarget>) => void;
+  handleChange: InputEventHandler;
+  handleBlur: InputEventHandler;
   id: FormData[typeof name];
   formInputs: FormInputs;
 };

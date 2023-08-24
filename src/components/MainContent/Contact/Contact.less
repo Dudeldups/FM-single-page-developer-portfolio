@@ -54,11 +54,33 @@
 
 .form {
   z-index: 1;
+  position: relative;
   min-width: min(100%, 27.8rem);
   display: grid;
   gap: 2rem;
+  transition: opacity 350ms ease-in;
+
+  &.submitted {
+    opacity: 0.6;
+    pointer-events: none;
+  }
 
   &__button {
     justify-self: flex-end;
+  }
+}
+
+.submit-message {
+  opacity: 0;
+  filter: blur(0.2rem);
+  position: absolute;
+  inset: auto 0 -0.2rem 0;
+  text-align: center;
+  color: @clr-green;
+  transition: opacity 500ms ease-in, filter 600ms ease-in;
+
+  &.show {
+    opacity: 1;
+    filter: none;
   }
 }
