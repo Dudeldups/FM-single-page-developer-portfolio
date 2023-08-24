@@ -44,4 +44,54 @@
       padding-block: 4.5rem 3.4rem;
     });
   }
+
+  &__item {
+    opacity: 0;
+
+    &:nth-child(1),
+    &:nth-child(3),
+    &:nth-child(5) {
+      clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+      .keyframes(revealAnimation, {
+        0% {
+          opacity: 0;
+          clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+        }
+        50% {
+          clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
+        }
+        100% {
+          opacity: 1;
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+      });
+
+      &.visible {
+        animation: revealAnimation 1.5s ease-in forwards;
+      }
+    }
+
+    &:nth-child(2),
+    &:nth-child(4),
+    &:nth-child(6) {
+      clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
+      .keyframes(revealAnimationReverse, {
+        0% {
+          opacity: 0;
+          clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
+        }
+        50% {
+          clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+        }
+        100% {
+          opacity: 1;
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+      });
+
+      &.visible {
+        animation: revealAnimationReverse 1.5s ease-in forwards;
+      }
+    }
+  }
 }
