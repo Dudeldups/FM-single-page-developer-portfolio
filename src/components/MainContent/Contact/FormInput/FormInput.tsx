@@ -6,8 +6,15 @@ export default function FormInput({
   formInputs,
 }: FormInputProps) {
   const isTextArea = id === "message";
+  const currentValue = formInputs[id as keyof FormInputs].value;
+  const currentError = formInputs[id as keyof FormInputs].error;
+  const isError = currentError !== "";
+  const isValid = currentValue !== "" && !isError;
+
   return (
-    <label htmlFor={id} className="form__label">
+    <label
+      htmlFor={id}
+      className={`form__label ${isValid ? "valid" : isError ? "error" : ""}`}>
       <span className="sr-only">{id}</span>
       {isTextArea ? (
         <textarea
@@ -16,7 +23,7 @@ export default function FormInput({
           name={id}
           id={id}
           onChange={handleChange}
-          value={formInputs[id as keyof FormInputs].value}
+          value={currentValue}
           className="form__input"></textarea>
       ) : (
         <input
@@ -25,13 +32,13 @@ export default function FormInput({
           name={id}
           id={id}
           onChange={handleChange}
-          value={formInputs[id as keyof FormInputs].value}
+          value={currentValue}
           className="form__input"
         />
       )}
-      {formInputs[id as keyof FormInputs].error !== "" && (
+      {isError && (
         <p aria-live="assertive" className="form__error">
-          {formInputs[id as keyof FormInputs].error}
+          {currentError}
         </p>
       )}
     </label>

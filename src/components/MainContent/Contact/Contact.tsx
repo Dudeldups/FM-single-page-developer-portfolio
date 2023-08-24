@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Contact.less";
 import FormInput from "./FormInput/FormInput";
 
 export default function Contact() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formInputs, setFormInputs] = useState<FormInputs>({
     name: {
       value: "",
@@ -18,40 +19,49 @@ export default function Contact() {
     },
   });
 
+  useEffect(() => {
+    if (isSubmitted) {
+      const timer = setTimeout(() => {
+        setIsSubmitted(false);
+      }, 5000);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [isSubmitted]);
+
   const emailRegex = new RegExp(
-    /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/,
-    "gm"
+    /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/
   );
 
   const isValidEmail = (email: string) => emailRegex.test(email);
 
-  const validateForm = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { name, email, message } = formInputs;
-    const errors = {
-      name: name.value === "" ? "Name is required" : "",
-      email: isValidEmail(email.value) ? "" : "Invalid email format",
-      message: message.value === "" ? "Message is required" : "",
-    };
 
-    if (Object.values(errors).every(error => error === "")) {
-      console.log(formInputs);
-    } else {
-      setFormInputs(prev => ({
-        name: { ...prev.name, error: errors.name },
-        email: { ...prev.email, error: errors.email },
-        message: { ...prev.message, error: errors.message },
-      }));
+    if (Object.values(formInputs).every((input: Input) => input.error === "")) {
+      setIsSubmitted(true);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<EventTarget>) => {
     const { id, value } = e.target as HTMLInputElement | HTMLTextAreaElement;
+
+    let error = "";
+    if (id === "name" && value === "") {
+      error = "Please enter your name";
+    } else if (id === "email" && !isValidEmail(value)) {
+      error = "Invalid email format";
+    } else if (id === "message" && value === "") {
+      error = "Please enter a message";
+    }
+
     setFormInputs(prev => ({
       ...prev,
       [id]: {
         value,
-        error: "",
+        error,
       },
     }));
   };
@@ -66,7 +76,7 @@ export default function Contact() {
             fill in the form, and I’ll get back to you as soon as possible.
           </p>
         </header>
-        <form action="#" method="POST" onSubmit={validateForm} className="form">
+        <form action="#" method="POST" onSubmit={handleSubmit} className="form">
           <FormInput
             formInputs={formInputs}
             id="name"

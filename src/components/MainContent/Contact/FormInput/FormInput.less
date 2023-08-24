@@ -3,6 +3,18 @@
 .form {
   &__label {
     position: relative;
+
+    &.error::after {
+      content: "!";
+      position: absolute;
+      width: 1.75rem;
+      height: 1.75rem;
+      inset: 0 0 auto auto;
+      color: @clr-error;
+      text-align: center;
+      border: 0.0625rem solid @clr-error;
+      border-radius: 50%;
+    }
   }
 
   &__input {
@@ -11,5 +23,25 @@
     background-color: transparent;
     border: none;
     border-bottom: 0.0625rem solid @clr-white;
+
+    .error & {
+      border-color: @clr-error;
+    }
+
+    .valid & {
+      border-color: @clr-green;
+    }
+  }
+
+  &__exlamation {
+    position: absolute;
+    inset: 1rem 0 auto auto;
+    transform: translateY(-50%);
+  }
+
+  &__error {
+    position: absolute;
+    right: 0;
+    bottom: -1.25rem;
   }
 }
