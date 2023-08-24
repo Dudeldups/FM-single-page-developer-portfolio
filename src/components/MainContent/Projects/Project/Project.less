@@ -28,15 +28,17 @@
     });
   }
 
-  &:hover &__img,
-  &:focus-within &__img {
-    opacity: 0.15;
-  }
+  .mq(@bp-desktop, {
+    &:hover &__img,
+    &:focus-within &__img {
+      opacity: 0.15;
+    }
 
-  &:hover &__links,
-  &:focus-within &__links {
-    opacity: 1;
-  }
+    &:hover &__links,
+    &:focus-within &__links {
+      opacity: 1;
+    }
+  });
 }
 
 .techstack {

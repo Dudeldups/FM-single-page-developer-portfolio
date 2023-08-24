@@ -8,7 +8,7 @@ export default function Navbar() {
       </a>
       <ul className="nav__list">
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <a href="#" aria-label="github" className="nav__link">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -24,7 +24,7 @@ export default function Navbar() {
         </li>
 
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <a href="#" aria-label="frontend mentor" className="nav__link">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="26"
@@ -39,7 +39,7 @@ export default function Navbar() {
         </li>
 
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <a href="#" aria-label="linkedin" className="nav__link">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -55,7 +55,7 @@ export default function Navbar() {
         </li>
 
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <a href="#" aria-label="twitter" className="nav__link">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
