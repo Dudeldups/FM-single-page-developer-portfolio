@@ -1,6 +1,7 @@
 @import "../../../less/abstracts/index.less";
 
 .contact-bg {
+  z-index: -1;
   background-color: @clr-grey-dark;
   .padding-inline;
 }
@@ -30,7 +31,7 @@
 
   &::after {
     content: "";
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     inset: 0;
     background: url("/assets/images/pattern-rings.svg") no-repeat;
@@ -52,17 +53,10 @@
 }
 
 .form {
+  z-index: 1;
   min-width: min(100%, 27.8rem);
   display: grid;
   gap: 2rem;
-
-  &__input,
-  &__message {
-    padding: 0.5rem 1.5rem;
-    background-color: transparent;
-    border: none;
-    border-bottom: 0.0625rem solid @clr-white;
-  }
 
   &__button {
     justify-self: flex-end;

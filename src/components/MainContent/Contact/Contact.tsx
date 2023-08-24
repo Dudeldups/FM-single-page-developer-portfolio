@@ -1,8 +1,61 @@
+import { useState } from "react";
 import "./Contact.less";
+import FormInput from "./FormInput/FormInput";
 
-type ContactProps = {};
+export default function Contact() {
+  const [formInputs, setFormInputs] = useState<FormInputs>({
+    name: {
+      value: "",
+      error: "",
+    },
+    email: {
+      value: "",
+      error: "",
+    },
+    message: {
+      value: "",
+      error: "",
+    },
+  });
 
-export default function Contact({}: ContactProps) {
+  const emailRegex = new RegExp(
+    /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/,
+    "gm"
+  );
+
+  const isValidEmail = (email: string) => emailRegex.test(email);
+
+  const validateForm = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const { name, email, message } = formInputs;
+    const errors = {
+      name: name.value === "" ? "Name is required" : "",
+      email: isValidEmail(email.value) ? "" : "Invalid email format",
+      message: message.value === "" ? "Message is required" : "",
+    };
+
+    if (Object.values(errors).every(error => error === "")) {
+      console.log(formInputs);
+    } else {
+      setFormInputs(prev => ({
+        name: { ...prev.name, error: errors.name },
+        email: { ...prev.email, error: errors.email },
+        message: { ...prev.message, error: errors.message },
+      }));
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<EventTarget>) => {
+    const { id, value } = e.target as HTMLInputElement | HTMLTextAreaElement;
+    setFormInputs(prev => ({
+      ...prev,
+      [id]: {
+        value,
+        error: "",
+      },
+    }));
+  };
+
   return (
     <div className="contact-bg">
       <section className="contact" id="contact">
@@ -13,41 +66,22 @@ export default function Contact({}: ContactProps) {
             fill in the form, and I’ll get back to you as soon as possible.
           </p>
         </header>
-        <form action="#" method="POST" className="form">
-          <label htmlFor="name" className="sr-only">
-            Name
-          </label>
-          <input
-            type="text"
-            placeholder="name"
-            name="name"
+        <form action="#" method="POST" onSubmit={validateForm} className="form">
+          <FormInput
+            formInputs={formInputs}
             id="name"
-            className="form__input"
-            required
+            handleChange={handleChange}
           />
-
-          <label htmlFor="email" className="sr-only">
-            Email
-          </label>
-          <input
-            type="text"
-            placeholder="email"
-            name="email"
+          <FormInput
+            formInputs={formInputs}
             id="email"
-            className="form__input"
-            required
+            handleChange={handleChange}
           />
-
-          <label htmlFor="message" className="sr-only">
-            Name
-          </label>
-          <textarea
-            rows={4}
-            placeholder="message"
-            name="message"
+          <FormInput
+            formInputs={formInputs}
             id="message"
-            className="form__input"
-            required></textarea>
+            handleChange={handleChange}
+          />
 
           <button type="submit" className="form__button">
             Send message

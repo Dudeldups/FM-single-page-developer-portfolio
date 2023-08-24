@@ -6,4 +6,19 @@ type ProjectsData = {
   codeLink: string;
 };
 
-type ContactProps = {};
+type Input = {
+  value: string;
+  error: string;
+};
+
+type FormInputs = {
+  name: Input;
+  email: Input;
+  message: Input;
+};
+
+type FormInputProps = {
+  handleChange: (e: React.ChangeEvent<EventTarget>) => void;
+  id: FormData[typeof name];
+  formInputs: FormInputs;
+};
