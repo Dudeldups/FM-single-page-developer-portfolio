@@ -37,6 +37,8 @@ export default function Contact() {
     let error = "valid";
     if (id === "name" && value === "") {
       error = "Please enter your name";
+    } else if (id === "email" && value === "") {
+      error = "Please enter your email";
     } else if (id === "email" && !isValidEmail(value)) {
       error = "Invalid email format";
     } else if (id === "message" && value === "") {

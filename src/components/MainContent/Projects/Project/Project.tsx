@@ -21,17 +21,19 @@ export default function Project({
   return (
     <li ref={projectRef} className={`${isProjectVisible ? "visible" : ""}`}>
       <article className="project">
-        <picture>
-          <source
-            media="(min-width: 62.5rem)"
-            srcSet={`/assets/images/thumbnail-project-${image}-large.webp`}
-          />
-          <img
-            src={`/assets/images/thumbnail-project-${image}-small.webp`}
-            alt={`a preview of the ${title} website`}
-            className="project__img"
-          />
-        </picture>
+        <a href="#">
+          <picture>
+            <source
+              media="(min-width: 62.5rem)"
+              srcSet={`/assets/images/thumbnail-project-${image}-large.webp`}
+            />
+            <img
+              src={`/assets/images/thumbnail-project-${image}-small.webp`}
+              alt={`a preview of the ${title} website`}
+              className="project__img"
+            />
+          </picture>
+        </a>
         <h3 className="project__title">{title}</h3>
         <ul className="techstack">{allTechUsed}</ul>
         <div className="project__links">
