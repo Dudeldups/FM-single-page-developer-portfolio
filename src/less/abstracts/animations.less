@@ -1,23 +1,35 @@
 @keyframes showProjectLeft {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-100%) scale(0.8);
     opacity: 0.5;
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
     opacity: 1;
   }
 }
 
+.showProjectLeft() {
+  transform: translateX(-100%) scale(0.8);
+  opacity: 0.5;
+  animation: showProjectLeft 1s cubic-bezier(0, 0.9, 0, 0.9) forwards;
+}
+
 @keyframes showProjectRight {
   0% {
-    transform: translateX(100%);
+    transform: translateX(100%) scale(0.8);
     opacity: 0.5;
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
     opacity: 1;
   }
+}
+
+.showProjectRight() {
+  transform: translateX(100%) scale(0.8);
+  opacity: 0.5;
+  animation: showProjectRight 1s cubic-bezier(0, 0.9, 0, 0.9) forwards;
 }
 
 @keyframes fadeContainer {
@@ -31,6 +43,12 @@
   }
 }
 
+.fadeContainer() {
+  transform: translateY(4rem);
+  opacity: 0;
+  animation: fadeContainer 1.5s ease-out forwards;
+}
+
 @keyframes slideInH1Bottom {
   0% {
     transform: translateY(30rem);
@@ -40,11 +58,21 @@
   }
 }
 
+.slideInH1Bottom() {
+  transform: translateY(30rem);
+  animation: 8s slideInH1Bottom cubic-bezier(0, 1.25, 0, 1) forwards;
+}
+
 @keyframes slideInH1Left {
   0% {
-    transform: translateX(-30rem);
+    transform: translateX(-100vh forwards);
   }
   100% {
     transform: translateX(0);
   }
+}
+
+.slideInH1Left() {
+  transform: translateX(-100vh forwards);
+  animation: 8s slideInH1Left cubic-bezier(0, 1.25, 0, 1) forwards;
 }

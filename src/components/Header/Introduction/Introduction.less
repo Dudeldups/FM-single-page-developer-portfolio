@@ -27,10 +27,10 @@
   &__title {
     max-width: 15ch;
     margin-top: 2.5rem;
-    animation: 8s slideInH1Bottom cubic-bezier(0, 1.25, 0, 1);
+    .slideInH1Bottom();
 
     .mq(@bp-tablet, {
-      animation: 8s slideInH1Left cubic-bezier(0, 1.25, 0, 1);
+      .slideInH1Left(); 
       margin-top: 5.6rem;
     });
 
