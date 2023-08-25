@@ -1,33 +1,9 @@
 @import "../../../less/abstracts/index.less";
 
 .contact-bg {
-  z-index: -1;
+  position: relative;
   background-color: @clr-grey-dark;
   .padding-inline;
-}
-
-.contact {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  .max-width-content;
-  padding-block: 3.75rem;
-  margin-top: 5rem;
-
-  .mq(@bp-tablet, {
-    margin-top: 6.25rem;
-  });
-
-  .mq(@bp-desktop, {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 5rem;
-    margin-top: 8.7rem;
-    padding-top: 5.25rem;
-  });
 
   &::after {
     content: "";
@@ -41,7 +17,41 @@
       background-position: bottom 2rem left;
       transform: translate(-23rem, 0);
     });
+
+    .mq(@bp-desktop, {
+      background-position: center bottom 1rem;
+      transform: translateX(-42rem);
+    });
   }
+}
+
+.contact {
+  // opacity: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  .max-width-content;
+  padding-block: 3.75rem;
+  margin-top: 5rem;
+
+  &.visible {
+    animation: fadeContainer 1.5s ease-out forwards;
+  }
+
+  .mq(@bp-tablet, {
+    margin-top: 6.25rem;
+  });
+
+  .mq(@bp-desktop, {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 5rem;
+    margin-top: 8.7rem;
+    padding-top: 5.25rem;
+  });
 
   &__header {
     max-width: 27.8rem;

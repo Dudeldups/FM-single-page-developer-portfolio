@@ -36,18 +36,6 @@
 
 // general functions + mixins //
 
-.keyframes(@name, @arguments) {
-  @-moz-keyframes @name {
-    @arguments();
-  }
-  @-webkit-keyframes @name {
-    @arguments();
-  }
-  @keyframes @name {
-    @arguments();
-  }
-}
-
 .get-clamp(
   @min-size,
   @max-size,

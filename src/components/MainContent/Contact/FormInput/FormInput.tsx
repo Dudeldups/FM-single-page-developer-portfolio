@@ -9,7 +9,7 @@ export default function FormInput({
   const isTextArea = id === "message";
   const currentValue = formInputs[id as keyof FormInputs].value;
   const currentError = formInputs[id as keyof FormInputs].error;
-  const isError = currentError.length > 5; // more characters than "valid" :P
+  const isError = currentError !== "" && currentError !== "valid";
 
   return (
     <label

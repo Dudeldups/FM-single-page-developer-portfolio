@@ -7,6 +7,9 @@ export default function Contact() {
   const { ref: submitMessageRef, inView: isSubmitMessageVisible } = useInView({
     triggerOnce: true,
   });
+  const { ref: containerRef, inView: isContainerVisible } = useInView({
+    triggerOnce: true,
+  });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formInputs, setFormInputs] = useState<FormInputs>({
     name: {
@@ -94,7 +97,10 @@ export default function Contact() {
 
   return (
     <div className="contact-bg">
-      <section className="contact" id="contact">
+      <section
+        ref={containerRef}
+        className={`contact ${isContainerVisible ? "visible" : ""}`}
+        id="contact">
         <header className="contact__header">
           <h2 className="contact__title">Contact</h2>
           <p className="contact__desc">
@@ -133,7 +139,9 @@ export default function Contact() {
           <p
             ref={submitMessageRef}
             aria-live="assertive"
-            className={`submit-message ${isSubmitMessageVisible && "show"}`}>
+            className={`submit-message ${
+              isSubmitMessageVisible ? "show" : ""
+            }`}>
             Thank you for your message. I will reply as soon as possible.
           </p>
         )}
