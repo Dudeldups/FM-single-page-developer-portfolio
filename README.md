@@ -6,7 +6,7 @@ This is a solution to the [Single-page developer portfolio challenge on Frontend
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-    <!-- - [Added features](#added-features) -->
+    - [Added features](#added-features)
   - [Links](#links)
   - [Screenshot](#screenshot)
 - [My process](#my-process)
@@ -27,7 +27,9 @@ Users should be able to:
 - **Bonus**: Hook the form up so it sends and stores the user's enquiry (you can use a spreadsheet or Airtable to save the enquiries)
 - **Bonus**: Add your own details (image, skills, projects) to replace the ones in the design
 
-<!-- ### Added features -->
+### Added features
+
+- Form is validated when submitted and also when an input loses focus with the `onBlur` event listener
 
 ### Links
 
@@ -39,7 +41,7 @@ Users should be able to:
 
 #### Desktop
 
-![Solution](https://github.com/Dudeldups/FM-bmi-calculator/blob/main/screenshots/solution-desktop.png)
+![Solution](https://developer-portfolio-9000.netlify.app/)
 
 ## My process
 

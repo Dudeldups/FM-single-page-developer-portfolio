@@ -15,8 +15,13 @@
     transform: translate(0, 5rem);
 
     .mq(@bp-tablet, {
-      background-position: bottom right;
-      transform: translate(24rem, 1rem);
+      background-position: bottom right -20rem;
+      transform: translate(0, 1rem);
+    });
+
+    .mq(@bp-desktop, {
+      background-position: bottom center;
+      transform: translate(42rem, 1rem);
     });
   }
 
