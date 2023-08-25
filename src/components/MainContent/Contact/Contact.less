@@ -7,7 +7,6 @@
 
   &::after {
     content: "";
-    z-index: 0;
     position: absolute;
     inset: 0;
     background: url("/assets/images/pattern-rings.svg") no-repeat;
@@ -26,7 +25,7 @@
 }
 
 .contact {
-  // opacity: 0;
+  z-index: 1;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -63,7 +62,6 @@
 }
 
 .form {
-  z-index: 1;
   position: relative;
   min-width: min(100%, 27.8rem);
   display: grid;

@@ -9,6 +9,7 @@ export default function Contact() {
   });
   const { ref: containerRef, inView: isContainerVisible } = useInView({
     triggerOnce: true,
+    rootMargin: "20px",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formInputs, setFormInputs] = useState<FormInputs>({

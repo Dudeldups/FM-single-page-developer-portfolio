@@ -10,6 +10,7 @@ export default function Project({
 }: ProjectsData) {
   const { ref: projectRef, inView: isProjectVisible } = useInView({
     triggerOnce: true,
+    rootMargin: "20px",
   });
   const allTechUsed = techStack.map(item => (
     <li key={item} className="techstack__item">
