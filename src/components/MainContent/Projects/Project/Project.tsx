@@ -1,5 +1,4 @@
 import "./Project.less";
-import { useInView } from "react-intersection-observer";
 
 export default function Project({
   image,
@@ -8,10 +7,6 @@ export default function Project({
   projectLink,
   codeLink,
 }: ProjectsData) {
-  const { ref: projectRef, inView: isProjectVisible } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
   const allTechUsed = techStack.map(item => (
     <li key={item} className="techstack__item">
       {item}
@@ -20,9 +15,7 @@ export default function Project({
 
   return (
     <li>
-      <article
-        ref={projectRef}
-        className={`project ${isProjectVisible && "visible"}`}>
+      <article className="project">
         <picture>
           <source
             media="(min-width: 62.5rem)"
