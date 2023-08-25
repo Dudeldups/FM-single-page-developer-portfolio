@@ -33,15 +33,15 @@ Users should be able to:
 
 ### Links
 
-- [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/reacttsless-bmi-calculator-DfrVhETGpR)
+- [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/reacttsless-singlepage-developer-portfolio-AFzBk7yXYP)
 
-- [Live site](https://fm-bmi-calculator-9000.netlify.app/)
+- [Live site](https://developer-portfolio-9000.netlify.app/)
 
 ### Screenshot
 
 #### Desktop
 
-![Solution](https://developer-portfolio-9000.netlify.app/)
+![Solution](https://github.com/Dudeldups/FM-single-page-developer-portfolio/blob/main/screenshots/solution.png)
 
 ## My process
 
